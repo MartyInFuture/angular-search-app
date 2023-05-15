@@ -1,0 +1,16 @@
+<div class="login-container">
+  <div>
+    <h1 class="header">Sign In</h1>
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="email" />
+    </div>
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="password" />
+    </div>
+    <div class="button-wrapper">
+      <button mat-flat-button color="primary" (click)="handleSubmit()">
+        Sign In
+      </button>
+    </div>
+  </div>
+</div>

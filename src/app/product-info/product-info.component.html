@@ -1,0 +1,50 @@
+<ng-template [ngIf]="productDetailsData">
+  <div class="info-container">
+    <h2>Usage</h2>
+    <ng-template [ngIf]="brands && pickedBrand">
+      <div>
+        <mat-form-field>
+          <mat-label>Select Brand</mat-label>
+          <mat-select
+            [(value)]="pickedBrand"
+            (selectionChange)="onBrandChange($event)"
+          >
+            <mat-option *ngFor="let brand of brands" [value]="brand">{{
+              brand
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="models && pickedModel">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Select Model</mat-label>
+          <mat-select
+            [(value)]="pickedModel"
+            (selectionChange)="onModelChange($event)"
+          >
+            <mat-option *ngFor="let model of models" [value]="model">{{
+              model
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="details">
+      <div *ngFor="let detail of details">
+        <br />
+        <div *ngFor="let item of detail">{{ item[0] }}: {{ item[1] }}</div>
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template [ngIf]="characteristics">
+    <div class="info-container">
+      <h2>Characteristics</h2>
+      <div *ngFor="let item of characteristics">
+        {{ item.attribute.title }}: {{ item.value }}
+      </div>
+    </div>
+  </ng-template>
+</ng-template>

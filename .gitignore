@@ -1,0 +1,27 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+/dist/
+/tmp/
+
+# Angular specific
+/.angular
+/*.js
+/*.js.map
+/*.d.ts
+/*.metadata.json
+/*.ngfactory.ts
+/*.ngstyle.ts
+/$*.ngsummary.json
+/*.ngsummary.ts
+/$*.ngstyle.scss
+/*.css
+
+# IDE and editor files
+/.idea
+/.vscode
+*.sublime-*
+*.swp

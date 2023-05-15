@@ -1,0 +1,45 @@
+<div class="search-container">
+  <div>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Search by article ..."
+        [(ngModel)]="search"
+      />
+      <button
+        matSuffix
+        mat-icon-button
+        color="primary"
+        aria-label="Search"
+        (click)="handleSearch()"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="products-wrapper">
+  <div class="products-list">
+    <ng-template [ngIf]="products.length">
+      <h2>Products list</h2>
+      <app-product-list
+        (pickProductChildren)="pickProduct($event)"
+        [products]="products"
+        [isPrimary]="true"
+      ></app-product-list>
+    </ng-template>
+
+    <ng-template [ngIf]="similarProducts.length">
+      <h2>Similar products list</h2>
+      <app-product-list
+        (pickProductChildren)="pickProduct($event)"
+        [products]="similarProducts"
+      ></app-product-list>
+    </ng-template>
+  </div>
+  <div>
+    <app-product-info [product]="pickedProduct"></app-product-info>
+  </div>
+</div>
